@@ -1,0 +1,41 @@
+
+
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{empheq}
+\title{Assignment 2 \\ Computer Vision and Deep Learning}
+\author{Ahmed Alamleh}
+\date{\today}
+\begin{document}
+\maketitle
+\newpage
+\section{Task 1a: Backpropagation}
+we have that 
+\begin{equation}
+    w_{kj} := w_{kj} - \alpha \frac{\partial C}{\partial w_{kj}} = w_{kj} - \alpha \delta_k a_j
+\end{equation}
+and 
+\begin{equation}
+    w_{ji} := w_{ji} - \alpha \frac{\partial C}{\partial w_{ji}} 
+\end{equation}
+and so we have that 
+\begin{equation}
+    \delta_j = \frac{\partial C}{\partial z_j}.
+\end{equation}
+so we have that \begin{equation}
+    w_{ji} := w_{ji} - \alpha \frac{\partial C}{\partial z_{j}}  \frac{\partial z_{j}}{\partial w_{ji}} 
+\end{equation}
+
+and we know that   
+\begin{equation} z_{j} = \sum_{i=0}^{n} w_{ji}x_i \end{equation}
+so we have that \begin{equation}
+    w_{ji} := w_{ji} - \alpha \frac{\partial C}{\partial z_{j}}  \frac{\sum_{i=0}^{n} w_{ji}x_i}{\partial w_{ji}} 
+\end{equation}
+
+\begin{empheq} [box=\fcolorbox{red}{green}]{align}
+    w_{ji} := w_{ji} - \alpha \delta_j x_i 
+\end{empheq} 
+and we would show that  \(\delta_j\) = \(f'(z_j)\) \(\sum_{k}\) \(w_{ji}\) \(\delta_k\).
+
+\end{document}
